@@ -1,0 +1,12 @@
+name: CI/CD
+  on: [push]
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - run: ls -alih
+        - uses: actions/checkout@v4
+        - run: ls -alih
+
+    # test:
