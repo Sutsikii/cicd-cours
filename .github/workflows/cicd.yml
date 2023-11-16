@@ -19,6 +19,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: build
+    strategy:
+      matrix:
+        browser: ['chrome', 'edge']
     steps:
       - uses: actions/checkout@v4
       - name: Cache node_modules
@@ -32,7 +35,7 @@ jobs:
           install: false
           build: npm run build
           start: npm run start
-          browser: chrome
+          browser: ${{ matrix.broswser }}
       - name: Upload Cypress Videos
         if: always()
         uses: actions/upload-artifact@v3
