@@ -35,7 +35,7 @@ jobs:
           install: false
           build: npm run build
           start: npm run start
-          browser: ${{ matrix.broswser }}
+          browser: ${{ matrix.browser }}
       - name: Upload Cypress Videos
         if: always()
         uses: actions/upload-artifact@v3
