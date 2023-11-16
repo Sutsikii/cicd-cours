@@ -12,8 +12,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: cypress-io/github-action@v6
+      - uses: action/checkout@v4
       - name: Cypress Run
+      uses: cypress-io/github-action@v6
       with:
         build: npm run build
         start: npm run start
